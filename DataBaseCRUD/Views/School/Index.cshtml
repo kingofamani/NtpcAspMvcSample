@@ -1,0 +1,39 @@
+﻿@model IEnumerable<s05.Models.School>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>@Html.ActionLink("新增學校","Create")</div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.SchoolID)</th>
+                <th>@Html.DisplayNameFor(m => m.Name)</th>
+                <th>操作</th>
+            </tr>
+
+            @foreach (var school in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => school.SchoolID)</td>
+                    <td>@Html.DisplayFor(m => school.Name)</td>
+                    <td>@Html.ActionLink("詳細", "Detail", new { id = school.SchoolID })</td>
+                    <td>@Html.ActionLink("修改", "Edit", new { id = school.SchoolID })</td>
+                    <td>@Html.ActionLink("刪除", "Delete", new { id = school.SchoolID })</td>
+                    <td>@Html.ActionLink("刪除(確認框)", "Delete", new { id = school.SchoolID }, new {onclick="return confirm('確定要刪除？');" })</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

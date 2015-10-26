@@ -1,0 +1,38 @@
+﻿@model s05.Models.School
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div> 
+        @*06*@
+        @using (Html.BeginForm())
+        {
+            //一定要加HiddenFor因為：Edit[HttpPost]取不到SchoolID值
+            @Html.HiddenFor(m=>m.SchoolID)
+            <div>@Html.LabelFor(m => m.Name)</div>
+            <div>@Html.EditorFor(m => m.Name)</div>
+            <div>@Html.LabelFor(m => m.Address)</div>
+            <div>@Html.EditorFor(m => m.Address)</div>
+            <div>@Html.LabelFor(m => m.Tel)</div>
+            <div>@Html.EditorFor(m => m.Tel)</div>
+            
+            <div>
+                <input type="submit" value="修改" />
+            </div>
+        }
+        
+        <p>
+            @Html.ActionLink("上一頁", "Index")
+        </p>
+    </div>
+</body>
+</html>

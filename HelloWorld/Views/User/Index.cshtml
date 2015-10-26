@@ -1,0 +1,40 @@
+﻿@model s01.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @*01*@
+        <ul>
+            <li>代碼：@Model.UserID</li>
+            <li>姓名：@Model.Name</li>
+            <li>年齡：@Model.Age</li>
+        </ul>
+
+        @*02*@
+        <ul>
+            <li>
+                @Html.DisplayNameFor(m=>m.UserID):
+                @Html.DisplayFor(m=>m.UserID)
+            </li>
+            <li>
+                @Html.DisplayNameFor(m => m.Name):
+                @Html.DisplayFor(m => m.Name)
+            </li>
+            <li>
+                @Html.DisplayNameFor(m => m.Age):
+                @Html.DisplayFor(m => m.Age)
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

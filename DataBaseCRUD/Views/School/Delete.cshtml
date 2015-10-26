@@ -1,0 +1,27 @@
+﻿@model s05.Models.School
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div> 
+        @Html.DisplayForModel()
+        
+        @using(Html.BeginForm()){
+            <input type="submit" value="刪除" />
+        }
+
+        <p>
+            @Html.ActionLink("上一頁", "Index")
+        </p>
+    </div>
+</body>
+</html>
