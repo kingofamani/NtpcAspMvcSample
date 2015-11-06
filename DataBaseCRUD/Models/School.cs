@@ -11,10 +11,12 @@ namespace s05.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class School
     {
         public int SchoolID { get; set; }
+        [Required(ErrorMessage="輸入校名")]
         public string Name { get; set; }
         public string Address { get; set; }
         public string Tel { get; set; }

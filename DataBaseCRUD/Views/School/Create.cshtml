@@ -10,13 +10,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div> 
         @*06*@
         @using(Html.BeginForm()){
             <div>@Html.LabelFor(m=>m.Name)</div>
-            <div>@Html.EditorFor(m=>m.Name)</div>
+            <div>
+                @Html.EditorFor(m=>m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
             <div>@Html.LabelFor(m=>m.Address)</div>
             <div>@Html.EditorFor(m => m.Address)</div>
             <div>@Html.LabelFor(m => m.Tel)</div>
